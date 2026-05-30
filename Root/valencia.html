@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valencia - Vista Land</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navigation (same as index) -->
+  <nav class="navbar">
+    <!-- <div class="top-navbar">
+            <div class="project-switcher">
+                <a href="valencia.html" class="project-btn active">Valencia</a>
+                <a href="bria.html" class="project-btn">Bria</a>
+            </div>
+        </div> -->
+    <div class="main-navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <h2><i class="fas fa-home"></i> Vista Land</h2>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <a href="valencia.html" class="nav-link active">Valencia</a>
+          </li>
+          <li><a href="bria.html" class="nav-link">Bria</a></li>
+          <li>
+            <a href="others.html" class="nav-link disabled">Others <span>(coming soon)</span></a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Overview -->
+  <section class="project-overview" id="overview">
+    <div class="container">
+      <h1>Valencia – Pre-Selling Condominium</h1>
+      <p>
+        Experience modern living at its finest with Valencia, our newest
+        pre-selling condominium offering spacious units with balcony views,
+        premium amenities, and strategic location perfect for urban
+        professionals and growing families.
+      </p>
+    </div>
+  </section>
+
+  <!-- Unit Cards -->
+  <!--   <section class="units-section">
+        <div class="container">
+            <h2>Available Units</h2>
+             <div class="units-grid" id="unitsGrid">
+                <div class="unit-card">
+                    <img src="delux/delux.png" alt="Deluxe">
+                    <div class="unit-info">
+                        <h3>1BR Deluxe With Balcony</h3>
+                        <p>39.9 sqm</p>
+                    </div>
+                </div>
+                <div class="unit-card">
+                    <img src="Valencia\1br.png" alt="1BR">
+                    <div class="unit-info">
+                        <h3>1BR With Balcony</h3>
+                        <p>33.96 sqm</p>
+                    </div>
+                </div>
+                <div class="unit-card">
+                    <img src="Valencia\2br.png" alt="2BR">
+                    <div class="unit-info">
+                        <h3>2BR With Balcony</h3>
+                        <p>43.86 sqm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+-->
+
+  <!-- Unit Cards -->
+  <section class="units-section">
+    <div class="container">
+      <h2>Available Units</h2>
+      <div class="units-grid" id="unitsGrid">
+        <!-- Card 1: 1BR Deluxe With Balcony -->
+        <div class="unit-card" data-index="0" onclick="if (!isDragging) changeImage(this);">
+          <div class="unit-image-wrapper">
+            <img src="delux/delux.png" alt="Deluxe" class="unit-img" />
+            <div class="img-dots"></div>
+          </div>
+          <div class="unit-info">
+            <h3>1BR Deluxe With Balcony</h3>
+            <p>39.9 sqm</p>
+          </div>
+          <!-- Hidden image list for this card -->
+          <script type="application/json" class="unit-images">
+              [
+                "delux/delux.png",
+                "delux/delux2.png",
+                "delux/delux3.png",
+                "delux/delux4.png"
+              ]
+            </script>
+        </div>
+
+        <!-- Card 2: 1BR With Balcony -->
+        <div class="unit-card" data-index="0" onclick="if (!isDragging) changeImage(this);">
+          <div class="unit-image-wrapper">
+            <img src="Valencia/1br.png" alt="1BR" class="unit-img" />
+            <div class="img-dots"></div>
+          </div>
+          <div class="unit-info">
+            <h3>1BR With Balcony</h3>
+            <p>33.96 sqm</p>
+          </div>
+          <script type="application/json" class="unit-images">
+              [
+                "Valencia/1br.png",
+                "Valencia/1br2.png",
+                "Valencia/1br3.png",
+                "Valencia/1br4.png"
+              ]
+            </script>
+        </div>
+
+        <!-- Card 3: 2BR With Balcony -->
+        <div class="unit-card" data-index="0" onclick="if (!isDragging) changeImage(this);">
+          <div class="unit-image-wrapper">
+            <img src="Valencia/2br.png" alt="2BR" class="unit-img" />
+            <div class="img-dots"></div>
+          </div>
+          <div class="unit-info">
+            <h3>2BR With Balcony</h3>
+            <p>43.86 sqm</p>
+          </div>
+          <script type="application/json" class="unit-images">
+              [
+                "Valencia/2br.png",
+                "Valencia/2br2.png",
+                "Valencia/2br3.png",
+                "Valencia/2br4.png"
+              ]
+            </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Carousel -->
+  <section class="amenities-section">
+    <div class="container">
+      <h2>Amenities</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel" id="amenitiesCarousel">
+          <div class="carousel-slide active">
+            <img src="Amenities\Building 2.jpg" alt="Building" />
+            <p>Buildings</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/poolday.jpg" alt="pooldaylight" />
+            <p>Swimming Pool in Daylight</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/poolnight.jpg" alt="pooldaynight" />
+            <p>Swimming Pool in NightTime</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/playarea.jpg" alt="playarea" />
+            <p>Play Area</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/clubhouse.jpg" alt="clubhouseday" />
+            <p>Main Reception in Daylight</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/clubhousenight.jpg" alt="clubhousenight" />
+            <p>Main Reception in NightTime</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="Amenities/roofdeck.jpg" alt="roofDeck" />
+            <p>Roof Deck</p>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="changeSlide(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Development -->
+  <section class="development-section">
+    <div class="container">
+      <h2>Site Development Plan</h2>
+      <div class="images-grid">
+        <div class="image-card">
+          <img src="development/development1.jpg" alt="Site Plan 1" />
+          <p>Valencia Overview</p>
+        </div>
+        <div class="image-card">
+          <img src="development/development2.jpg" alt="Site Plan 2" />
+          <p>Lifestyle Center</p>
+        </div>
+        <div class="image-card">
+          <img src="development/development3.jpg" alt="Site Plan 1" />
+          <p>Lifestyle Center</p>
+        </div>
+        <div class="image-card">
+          <img src="development/development4.jpg" alt="Site Plan 2" />
+          <p>Future Development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vicinity Map 
+    <section class="map-section">
+        <div class="container">
+            <h2>Vicinity Map</h2>
+            <div class="map-container">
+                <img src="VacinityMap/Vicinity Map.png" alt="Vicinity Map" class="map-image">
+                <div class="map-description">
+                    <p>Strategically located near major business districts, schools, hospitals, and shopping centers. Easy access to public transportation and major road networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+  <section class="map-section">
+    <div class="container">
+      <h2>Vicinity Map</h2>
+      <div class="map-container" data-index="0" onclick="if (!isDragging) changeImage(this);">
+        <div class="unit-image-wrapper">
+          <img src="VacinityMap/Vicinity Map.png" alt="Vicinity Map" class="unit-img" />
+          <div class="img-dots"></div>
+        </div>
+        <div class="map-description">
+          <p>
+            Strategically located near major business districts, schools,
+            hospitals, and shopping centers. Easy access to public
+            transportation and major road networks.
+          </p>
+          <br>
+          <h3>What's Nearby?</h3>
+          <div class="nearby-grid">
+
+            <div class="nearby-card">
+              <h4>Transportation Hub</h4>
+              <ul>
+                <li>15 mins – Mactan Cebu International Airport</li>
+                <li>10 mins – Cebu-Cordova Link Expressway (CCLEX)</li>
+              </ul>
+            </div>
+
+            <div class="nearby-card">
+              <h4>Hospitals</h4>
+              <ul>
+                <li>8 mins – Mactan Doctors Hospital</li>
+                <li>15 mins – MactanMed (Mactan Optimal Medical Center)</li>
+                <li>8 mins – Arcibal Medical Clinic</li>
+              </ul>
+            </div>
+
+            <div class="nearby-card">
+              <h4>Commercial Establishments</h4>
+              <ul>
+                <li>10 mins – The Outlet at Pueblo Verde</li>
+                <li>8 mins – Mactan Town Center</li>
+                <li>5 mins – Gaisano Grand Mall Basak</li>
+              </ul>
+            </div>
+
+            <div class="nearby-card">
+              <h4>Schools & Universities</h4>
+              <ul>
+                <li>14 mins – University of Cebu</li>
+                <li>8 mins – Indiana Aerospace University</li>
+              </ul>
+            </div>
+
+            <div class="nearby-card">
+              <h4>Hotels & Resorts</h4>
+              <ul>
+                <li>20 mins – Shangri-La Mactan Cebu</li>
+                <li>15 mins – Bluewater Maribago Beach Resort</li>
+                <li>13 mins – Plantation Bay Resort & Spa</li>
+                <li>10 mins – Solea Mactan Resort</li>
+              </ul>
+            </div>
+          </div>
+          <script type="application/json" class="unit-images">
+            [
+              "VacinityMap/Vicinity Map.png",
+              "VacinityMap/vacinitymap3.png",
+              "VacinityMap/vacinitymap4.png"
+            ]
+          </script>
+        </div>
+      </div>
+  </section>
+  <!-- 
+    <section class="promo-section">
+      <div class="container">
+      
+                PROMO SECTION - Easy to edit
+                Add your promo banners or text here
+                Example:
+                <div class="promo-card">
+                    <h3>Limited Time Offer!</h3>
+                    <p>Free 3 months amortization</p>
+                </div>
+          
+        <div class="promo-placeholder">
+          <p>
+            <i class="fas fa-star"></i> If there are active promos, place them
+            here.
+          </p>
+        </div>
+      </div>
+    </section>
+      -->
+
+
+ <!-- 
+  <div class="fab" id="fabBtn">
+    <i class="fas fa-comments"></i>
+  </div>
+
+ FAB and Popup (same as index) 
+    <div class="fab-popup" id="fabPopup">
+      <div class="popup-content">
+        <h4>Contact Us</h4>
+        <div class="contact-options">
+          <a href="#" class="contact-btn whatsapp"
+            ><img src="Images/WhatsApp.svg.webp" alt="WhatsApp" /> WhatsApp</a
+          >
+          <a href="#" class="contact-btn call"
+            ><img src="Images/Call.png" alt="Call" /> Call</a
+          >
+          <a href="#" class="contact-btn messenger"
+            ><img
+              src="Images/Facebook_Messenger_logo_2020.svg.png"
+              alt="Messenger"
+            />
+            Messenger</a
+          >
+        </div>
+      </div>
+    </div>-->
+  <script src="script.js"></script>
+</body>
+
+</html>
